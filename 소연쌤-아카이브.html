@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소연쌤 | 아카이브</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+  /* ============================================
+     ✏️ 링크 수정은 이 파일에서 href="#" 부분을 찾아
+     실제 링크 주소로 바꿔주시면 됩니다.
+     (Ctrl+F 로 "여기에 링크" 검색하면 빨리 찾을 수 있어요)
+     ============================================ */
+
+  :root{
+    --paper:      #FBF6EC;
+    --paper-card: #FFFEFA;
+    --ink:        #2B2620;
+    --ink-soft:   #6B6258;
+    --gold:       #E8A93B;
+    --gold-deep:  #C98A1F;
+    --coral:      #E96A57;
+    --sage:       #7C9A7E;
+    --line:       rgba(43,38,32,0.12);
+    --shadow:     0 6px 20px rgba(43,38,32,0.08);
+  }
+
+  *{ box-sizing:border-box; }
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 10% 0%, rgba(232,169,59,0.10), transparent 40%),
+      radial-gradient(circle at 90% 30%, rgba(124,154,126,0.10), transparent 45%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans KR', sans-serif;
+    padding:0 0 80px;
+  }
+
+  .display{
+    font-family:'Gowun Batang', serif;
+  }
+
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:0 20px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:56px 20px 40px;
+    text-align:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    color:var(--gold-deep);
+    background:rgba(232,169,59,0.14);
+    border:1px solid rgba(232,169,59,0.35);
+    padding:6px 16px;
+    border-radius:100px;
+    margin-bottom:22px;
+  }
+  .avatar{
+    width:108px;height:108px;
+    border-radius:50%;
+    margin:0 auto 20px;
+    background:
+      linear-gradient(150deg, #FFE3AE, #F3B27A 55%, #E96A57);
+    display:flex;align-items:center;justify-content:center;
+    font-size:42px;
+    box-shadow:0 8px 24px rgba(233,106,87,0.30);
+    border:4px solid var(--paper-card);
+  }
+  .hero h1{
+    font-size:38px;
+    margin:0 0 6px;
+    line-height:1.25;
+  }
+  .hero .role{
+    font-size:15.5px;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+  }
+  .hero p.bio{
+    font-size:14.5px;
+    line-height:1.75;
+    color:var(--ink-soft);
+    max-width:440px;
+    margin:0 auto 26px;
+  }
+
+  .stats{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .stat{
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:10px 16px;
+    box-shadow:var(--shadow);
+    min-width:96px;
+  }
+  .stat b{
+    display:block;
+    font-size:17px;
+    font-family:'Gowun Batang', serif;
+  }
+  .stat span{
+    font-size:11px;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+
+  .instagram{
+    margin-top:24px;
+    font-size:13.5px;
+    color:var(--ink-soft);
+  }
+  .instagram a{ color:var(--coral); font-weight:700; text-decoration:none; }
+
+  /* ---------- BINDER TAB SECTIONS ---------- */
+  section{
+    margin-top:34px;
+  }
+  .tab-card{
+    position:relative;
+    background:var(--paper-card);
+    border:1px solid var(--line);
+    border-radius:4px 18px 18px 18px;
+    box-shadow:var(--shadow);
+    padding:30px 24px 26px;
+  }
+  .tab{
+    position:absolute;
+    top:-19px; left:22px;
+    padding:7px 18px 7px 14px;
+    border-radius:10px 10px 2px 2px;
+    font-size:13px;
+    font-weight:700;
+    color:#fff;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    transform:rotate(-2deg);
+    box-shadow:0 4px 8px rgba(43,38,32,0.15);
+  }
+  .tab-gold{ background:var(--gold); }
+  .tab-coral{ background:var(--coral); }
+  .tab-sage{ background:var(--sage); }
+
+  section h2{
+    font-family:'Gowun Batang', serif;
+    font-size:21px;
+    margin:6px 0 4px;
+  }
+  section .desc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin:0 0 20px;
+    line-height:1.6;
+  }
+
+  /* ---------- APP GRID ---------- */
+  .app-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+  .app-card{
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 14px;
+    background:#fff;
+    text-decoration:none;
+    color:var(--ink);
+    display:block;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .app-card:hover{
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
+  }
+  .app-emoji{ font-size:24px; display:block; margin-bottom:10px; }
+  .app-card h3{
+    font-size:14px;
+    margin:0 0 4px;
+    font-weight:700;
+  }
+  .app-card p{
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin:0 0 10px;
+    line-height:1.45;
+  }
+  .app-card .tag{
+    font-size:10.5px;
+    font-weight:700;
+    color:var(--gold-deep);
+  }
+
+  /* ---------- LINK BUTTONS ---------- */
+  .link-row{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .link-btn{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:16px;
+    padding:16px 18px;
+    text-decoration:none;
+    color:var(--ink);
+    transition:transform .15s ease, border-color .15s ease;
+  }
+  .link-btn:hover{
+    transform:translateY(-2px);
+    border-color:var(--gold);
+  }
+  .link-btn .icon{
+    width:42px;height:42px;
+    border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:19px;
+    flex-shrink:0;
+  }
+  .ic-cafe{ background:rgba(124,154,126,0.18); }
+  .ic-chat{ background:rgba(233,106,87,0.16); }
+  .ic-canva{ background:rgba(232,169,59,0.18); }
+  .link-btn .txt b{ display:block; font-size:14.5px; }
+  .link-btn .txt span{ font-size:12px; color:var(--ink-soft); }
+  .link-btn .arrow{ margin-left:auto; color:var(--ink-soft); font-size:18px; }
+
+  /* ---------- LECTURE LIST ---------- */
+  .lec-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .lec-item{
+    display:flex;
+    gap:14px;
+    padding:14px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .lec-item:last-child{ border-bottom:none; }
+  .lec-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--sage);
+    margin-top:7px;flex-shrink:0;
+  }
+  .lec-item h4{ margin:0 0 3px; font-size:14.5px; }
+  .lec-item p{ margin:0; font-size:12.5px; color:var(--ink-soft); line-height:1.5; }
+
+  footer{
+    text-align:center;
+    margin-top:50px;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:480px){
+    .hero{ padding:44px 16px 30px; }
+    .hero h1{ font-size:30px; }
+    .app-grid{ grid-template-columns:1fr; }
+    .tab-card{ padding:26px 18px 22px; }
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!-- ===== HERO ===== -->
+    <div class="hero">
+      <span class="eyebrow">✦ EARLY CHILDHOOD × AI EDU</span>
+      <div class="avatar">🌼</div>
+      <h1 class="display">소연쌤</h1>
+      <p class="role">유아교육 디지털 크리에이터 · Canva Education Creator</p>
+      <p class="bio">
+        9년간 어린이집 교사로 아이들과 함께한 시간을 바탕으로,
+        지금은 교실에서 바로 쓸 수 있는 AI 웹앱과 디지털 교육 콘텐츠를 만들고 있어요.
+        선생님들과 함께 배우고 나누는 공간, 갓쌤EDU를 운영 중입니다.
+      </p>
+      <div class="stats">
+        <div class="stat"><b>9년+</b><span>현장 경험</span></div>
+        <div class="stat"><b>1,500+</b><span>교사 커뮤니티</span></div>
+        <div class="stat"><b>2025</b><span>캔바 크리에이터</span></div>
+      </div>
+      <div class="instagram">instagram · <a href="#여기에링크-인스타그램" target="_blank">@ran.s.y</a></div>
+    </div>
+
+    <!-- ===== 만든 웹앱 모음 ===== -->
+    <section>
+      <div class="tab-card">
+        <span class="tab tab-gold">🧸 교실 웹앱</span>
+        <h2>아이들과 함께 만든 웹앱들</h2>
+        <p class="desc">카메라 하나로 몸을 움직여 노는 AI 웹앱부터, 보육 업무를 도와주는 도구까지 — 직접 코딩해서 만들고 있어요.</p>
+
+        <div class="app-grid">
+          <a class="app-card" href="#여기에링크1" target="_blank">
+            <span class="app-emoji">🦌</span>
+            <h3>동물 등불 찾기</h3>
+            <p>손을 움직여 숨은 동물을 찾는 핸드트래킹 게임</p>
+            <span class="tag">영아 · 손인식</span>
+          </a>
+          <a class="app-card" href="#여기에링크2" target="_blank">
+            <span class="app-emoji">🌊</span>
+            <h3>강 건너기</h3>
+            <p>몸 동작으로 돌다리를 건너는 포즈인식 게임</p>
+            <span class="tag">유아 · 포즈인식</span>
+          </a>
+          <a class="app-card" href="#여기에링크3" target="_blank">
+            <span class="app-emoji">🐝</span>
+            <h3>꿀벌 채집 게임</h3>
+            <p>손을 뻗어 꽃의 꿀을 모으는 움직임 놀이</p>
+            <span class="tag">유아 · 손인식</span>
+          </a>
+          <a class="app-card" href="#여기에링크4" target="_blank">
+            <span class="app-emoji">🦷</span>
+            <h3>치카치카 게임</h3>
+            <p>양치 습관을 놀이로 배우는 인터랙티브 앱</p>
+            <span class="tag">생활습관</span>
+          </a>
+          <a class="app-card" href="#여기에링크5" target="_blank">
+            <span class="app-emoji">🎨</span>
+            <h3>AR 페인트</h3>
+            <p>손끝으로 허공에 그림을 그리는 증강현실 놀이</p>
+            <span class="tag">유아 · 미술</span>
+          </a>
+          <a class="app-card" href="#여기에링크6" target="_blank">
+            <span class="app-emoji">📔</span>
+            <h3>보육일지 도우미</h3>
+            <p>AI가 함께 작성을 도와주는 보육일지 작성 도구</p>
+            <span class="tag">업무자동화</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 캔바 크리에이터 ===== -->
+    <section>
+      <div class="tab-card">
+        <span class="tab tab-coral">🎨 Canva</span>
+        <h2>캔바 교육 크리에이터</h2>
+        <p class="desc">놀이일지, 놀이패널, 미니북 등 — 유아교육 현장에 꼭 맞는 캔바 템플릿을 만들고 있어요.</p>
+        <div class="link-row">
+          <a class="link-btn" href="#여기에링크-캔바프로필" target="_blank">
+            <div class="icon ic-canva">🎨</div>
+            <div class="txt">
+              <b>캔바 크리에이터 프로필 보기</b>
+              <span>소연쌤이 만든 템플릿 모아보기</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 함께해요 ===== -->
+    <section>
+      <div class="tab-card">
+        <span class="tab tab-sage">💬 함께해요</span>
+        <h2>갓쌤EDU와 함께하기</h2>
+        <p class="desc">1,500명이 넘는 선생님들과 함께 배우고 나누는 공간이에요. 누구나 편하게 들어오세요!</p>
+        <div class="link-row">
+          <a class="link-btn" href="#여기에링크-카페" target="_blank">
+            <div class="icon ic-cafe">🏠</div>
+            <div class="txt">
+              <b>갓쌤EDU 카페</b>
+              <span>교사 커뮤니티 · 자료 공유</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+          <a class="link-btn" href="#여기에링크-오픈채팅" target="_blank">
+            <div class="icon ic-chat">💛</div>
+            <div class="txt">
+              <b>오픈채팅방 참여하기</b>
+              <span>실시간 소통 · 질문 환영</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 강의 & 연수 ===== -->
+    <section>
+      <div class="tab-card">
+        <span class="tab tab-gold">📚 연수</span>
+        <h2>강의 · 연수 안내</h2>
+        <p class="desc">교사들을 위한 디지털 교육 연수 프로그램이에요.</p>
+        <div class="lec-list">
+          <div class="lec-item">
+            <div class="lec-dot"></div>
+            <div>
+              <h4>바이브코딩 입문 3주 과정</h4>
+              <p>캔바 코드 · Sheets부터 시작하는 첫 코딩 수업</p>
+            </div>
+          </div>
+          <div class="lec-item">
+            <div class="lec-dot"></div>
+            <div>
+              <h4>바이브코딩 심화 4주 과정</h4>
+              <p>Claude Code · GitHub · 자동배포까지</p>
+            </div>
+          </div>
+          <div class="lec-item">
+            <div class="lec-dot"></div>
+            <div>
+              <h4>갓쌤연수원 정규 과정</h4>
+              <p>분과별 활동 · 무료체험 이벤트 운영중</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      🌼 소연쌤 · 갓쌤EDU<br>
+      made with care for early childhood teachers
+    </footer>
+
+  </div>
+
+</body>
+</html>
